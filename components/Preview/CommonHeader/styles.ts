@@ -33,10 +33,11 @@ export const styles = StyleSheet.create({
   titleText: {
     color: COLORS.WHITE,
     textAlign: 'center',
-    fontFamily: 'SF-Bold',
+    fontFamily: 'System',
     fontWeight: 'bold',
     fontSize: 15,
     lineHeight: 15,
     marginBottom: 8,
   },
 });
+

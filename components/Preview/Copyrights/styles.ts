@@ -12,8 +12,9 @@ export const styles = StyleSheet.create({
     marginTop: 5,
     fontSize: 13,
     lineHeight: 13,
-    fontFamily: 'SF-Regular',
+    fontFamily: 'System',
     color: COLORS.WHITE,
     minHeight: 13,
   },
 });
+

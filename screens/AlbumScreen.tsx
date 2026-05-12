@@ -129,6 +129,9 @@ export const AlbumScreen = ({ albumId }: AlbumScreenPropsType) => {
       copyrightTexts={copyrightTexts}
       tracks={tracks}
       artists={artists}
+      description={album?.description}
+      kidsMyth={album?.kidsMyth}
+      tips={album?.tips}
     />
   );
 };

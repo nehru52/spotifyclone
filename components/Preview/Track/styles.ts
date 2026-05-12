@@ -9,6 +9,11 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  playIconContainer: {
+    width: 32,
+    alignItems: 'center',
+    marginRight: 12,
+  },
   image: {
     width: TRACK_COVER_SIZE,
     height: TRACK_COVER_SIZE,
@@ -30,7 +35,7 @@ export const styles = StyleSheet.create({
   nameText: {
     color: COLORS.WHITE,
     textAlign: 'center',
-    fontFamily: 'SF-Regular',
+    fontFamily: 'System',
     fontSize: 17,
     lineHeight: 17,
     minHeight: 17,
@@ -61,7 +66,7 @@ export const styles = StyleSheet.create({
   explicitText: {
     color: COLORS.PRIMARY,
     textAlign: 'center',
-    fontFamily: 'SF-Bold',
+    fontFamily: 'System',
     fontWeight: '700',
     fontSize: 10,
     lineHeight: 10,
@@ -89,7 +94,7 @@ export const styles = StyleSheet.create({
   artistNameText: {
     color: COLORS.LIGHT_GREY,
     textAlign: 'center',
-    fontFamily: 'SF-Regular',
+    fontFamily: 'System',
     fontSize: 14,
     lineHeight: 14,
     minHeight: 14,
@@ -111,3 +116,4 @@ export const styles = StyleSheet.create({
     color: COLORS.LIGHTER_GREY,
   },
 });
+

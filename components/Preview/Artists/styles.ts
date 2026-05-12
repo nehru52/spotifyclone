@@ -22,10 +22,11 @@ export const styles = StyleSheet.create({
   },
   text: {
     color: COLORS.WHITE,
-    fontFamily: 'SF-Regular',
+    fontFamily: 'System',
     fontSize: 15,
     lineHeight: 15,
     minHeight: 15,
     marginLeft: 16,
   },
 });
+

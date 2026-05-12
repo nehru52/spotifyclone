@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
   container: {
     width: '100%',
     backgroundColor: COLORS.PRIMARY,
-    paddingBottom: 16,
+    paddingBottom: 4,
     elevation: 20,
     shadowColor: COLORS.BLACK,
     shadowOffset: { width: 0, height: 5 },
@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
   },
   content: {
     paddingHorizontal: 16,
-    marginTop: 35,
+    marginTop: 4,
     flexDirection: 'row',
     alignItems: 'center',
   },
@@ -32,9 +32,9 @@ export const styles = StyleSheet.create({
     height: '100%',
   },
   titleText: {
-    color: COLORS.WHITE,
+    color: COLORS.BLACK,
     textAlign: 'center',
-    fontFamily: 'SF-Bold',
+    fontFamily: 'System',
     fontWeight: '700',
     fontSize: 22,
     lineHeight: 22,
@@ -43,7 +43,8 @@ export const styles = StyleSheet.create({
   },
   icon: {
     fontSize: 30,
-    color: COLORS.WHITE,
+    color: COLORS.BLACK,
     marginLeft: 16,
   },
 });
+

@@ -24,7 +24,7 @@ export const styling = (size: Sizes, shape: Shapes) =>
     cardTitleText: {
       fontSize: 13,
       lineHeight: 13,
-      fontFamily: 'SF-Bold',
+      fontFamily: 'System',
       color: COLORS.WHITE,
       maxWidth: size,
       marginTop: 10,
@@ -34,7 +34,8 @@ export const styling = (size: Sizes, shape: Shapes) =>
       marginTop: 5,
       fontSize: 13,
       lineHeight: 13,
-      fontFamily: 'SF-Regular',
+      fontFamily: 'System',
       color: COLORS.LIGHT_GREY,
     },
   });
+

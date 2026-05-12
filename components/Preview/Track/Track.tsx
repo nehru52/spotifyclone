@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Pressable, Text, View } from 'react-native';
+import { Pressable, Text, View, TouchableOpacity } from 'react-native';
 import { Image } from 'expo-image';
 
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
@@ -8,7 +8,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { FontAwesome5 } from '@expo/vector-icons';
 
 import { useApplicationDimensions } from '@hooks';
-import { explicit_SIGN, TRACK_COVER_SIZE } from '@config';
+import { COLORS, explicit_SIGN, TRACK_COVER_SIZE } from '@config';
 import { getFallbackImage } from '@utils';
 
 import { styles } from './styles';
@@ -23,6 +23,7 @@ export type TrackPropsType = {
   isPlaying: boolean;
   explicit: boolean;
   forceDisableSaveIcon?: boolean;
+  onPress?: () => void;
 };
 
 export const Track = ({
@@ -35,19 +36,25 @@ export const Track = ({
   isPlaying,
   explicit,
   forceDisableSaveIcon,
+  onPress,
 }: TrackPropsType) => {
   const { width } = useApplicationDimensions();
   const maxWidth = width - 150;
   const isPlaylist = type === 'playlist';
 
   return (
-    <View style={styles.container}>
-      {isPlaylist && (
-        <Image
-          style={styles.image}
-          source={imageURL ? { uri: imageURL } : getFallbackImage('track')}
-        />
-      )}
+    <TouchableOpacity 
+      style={styles.container} 
+      onPress={onPress}
+      activeOpacity={0.7}
+    >
+      <View style={styles.playIconContainer}>
+        {isPlaying ? (
+          <Ionicons name="stats-chart-sharp" size={18} color={COLORS.TINT} />
+        ) : (
+          <Ionicons name="play-circle" size={24} color="rgba(255,255,255,0.4)" />
+        )}
+      </View>
       <View style={styles.content}>
         <View
           style={[
@@ -60,9 +67,6 @@ export const Track = ({
             },
           ]}
         >
-          {isPlaying && (
-            <Ionicons style={styles.isPlayingIcon} name="stats-chart-sharp" />
-          )}
           <Text
             numberOfLines={1}
             style={[
@@ -103,6 +107,6 @@ export const Track = ({
       <Pressable>
         <Entypo style={styles.moreIcon} name="dots-three-horizontal" />
       </Pressable>
-    </View>
+    </TouchableOpacity>
   );
 };

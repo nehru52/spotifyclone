@@ -8,9 +8,9 @@ export const styles = StyleSheet.create({
     paddingBottom: 14,
   },
   title: {
-    color: COLORS.WHITE,
+    color: COLORS.BLACK,
     textAlign: 'center',
-    fontFamily: 'SF-Bold',
+    fontFamily: 'System',
     fontWeight: 'bold',
     fontSize: 25,
     lineHeight: 25,
@@ -18,9 +18,9 @@ export const styles = StyleSheet.create({
     minHeight: 25,
   },
   subtitle: {
-    color: COLORS.WHITE,
+    color: COLORS.BLACK,
     textAlign: 'center',
-    fontFamily: 'SF-Bold',
+    fontFamily: 'System',
     fontWeight: 'bold',
     fontSize: 14,
     lineHeight: 14,
@@ -29,8 +29,8 @@ export const styles = StyleSheet.create({
     minHeight: 14,
   },
   info: {
-    color: COLORS.LIGHT_GREY,
-    fontFamily: 'SF-Regular',
+    color: COLORS.GREY,
+    fontFamily: 'System',
     fontSize: 13,
     lineHeight: 13,
     marginTop: 9,
@@ -62,7 +62,7 @@ export const styles = StyleSheet.create({
     left: 0.5,
     fontSize: 16,
     fontWeight: '900',
-    color: COLORS.LIGHT_GREY,
+    color: COLORS.GREY,
   },
   saveIconActive: {
     fontSize: 16,
@@ -78,13 +78,13 @@ export const styles = StyleSheet.create({
     borderRadius: Shapes.CIRCLE,
     borderWidth: 1.5,
     backgroundColor: 'transparent',
-    borderColor: COLORS.LIGHT_GREY,
+    borderColor: COLORS.GREY,
   },
   isDownloadedContainerActive: {
     fontSize: 12,
     top: 0.5,
     left: 0.5,
-    color: COLORS.LIGHT_GREY,
+    color: COLORS.GREY,
   },
   isDownloadedIcon: {
     backgroundColor: COLORS.TINT,
@@ -95,6 +95,7 @@ export const styles = StyleSheet.create({
   },
   moreIcon: {
     fontSize: 20,
-    color: COLORS.LIGHT_GREY,
+    color: COLORS.GREY,
   },
 });
+

@@ -1,32 +1,37 @@
-import * as React from 'react';
-import { Redirect } from 'expo-router';
-
-import { getSessionToken } from '@api';
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import { Link } from 'expo-router';
 
 export default function App() {
-  const [isLoading, setIsLoading] = React.useState(true);
-  const [token, setToken] = React.useState<string | null>(null);
-
-  React.useEffect(() => {
-    (async () => {
-      try {
-        const storedToken = await getSessionToken();
-        setToken(storedToken);
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setIsLoading(false);
-      }
-    })();
-  }, [token]);
-
-  if (isLoading) {
-    return null;
-  }
-
-  if (token) {
-    return <Redirect href={{ pathname: '/home', params: {} }} />;
-  }
-
-  return <Redirect href={{ pathname: '/login', params: {} }} />;
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>TEST - App Loaded!</Text>
+      <Link href="/(tabs)/home" style={styles.link}>
+        <Text style={styles.linkText}>Go to Home</Text>
+      </Link>
+    </View>
+  );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#000',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    color: '#fff',
+    fontSize: 24,
+    marginBottom: 20,
+  },
+  link: {
+    padding: 20,
+    backgroundColor: '#4CAF50',
+    borderRadius: 10,
+  },
+  linkText: {
+    color: '#fff',
+    fontSize: 18,
+  },
+});

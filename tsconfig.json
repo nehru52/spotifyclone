@@ -24,5 +24,10 @@
     "@typings/index.d.ts",
     "@typings/global.d.ts",
     "expo-env.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "audio-conversion-test",
+    "cloudflare-worker"
   ]
 }

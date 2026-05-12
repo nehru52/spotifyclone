@@ -4,7 +4,7 @@ export type AlbumModel = {
   albumType: 'album' | 'single' | 'compilation';
   name: string;
   imageURL: string;
-  artists: { type: 'artist'; id: string }[];
+  artists: { type: 'artist'; id: string; name: string }[];
   releaseDate: string;
   tracks: {
     total: number;
@@ -20,4 +20,7 @@ export type AlbumModel = {
   copyrights: { text: string; type: string }[];
   genres: string[];
   label: string;
+  description?: string;
+  kidsMyth?: string;
+  tips?: string[];
 };

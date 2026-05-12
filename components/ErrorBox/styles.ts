@@ -14,6 +14,7 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 16,
     textAlign: 'center',
-    fontFamily: 'SF-Regular',
+    fontFamily: 'System',
   },
 });
+

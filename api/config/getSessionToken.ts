@@ -36,7 +36,7 @@ export const getSessionToken = async (): Promise<string | null> => {
   if (!Constants.expoConfig || !Constants.expoConfig.extra) {
     return null;
   }
-  const { tokenKey, refreshTokenKey, expirationKey } =
+  const { tokenKey = 'spotify_token', refreshTokenKey = 'spotify_refresh_token', expirationKey = 'spotify_token_expiration' } =
     Constants.expoConfig.extra;
 
   const storedToken = await AsyncStorage.getItem(tokenKey);

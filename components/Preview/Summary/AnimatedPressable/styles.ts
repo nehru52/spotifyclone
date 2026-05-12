@@ -1,4 +1,4 @@
-import { Shapes } from '@config';
+import { COLORS, Shapes } from '@config';
 import { hexToRGB } from '@utils';
 import { StyleSheet } from 'react-native';
 
@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     height: 26,
     borderRadius: Shapes.CIRCLE,
     borderWidth: 3,
-    shadowColor: hexToRGB('#61ef61', 0.6),
+    shadowColor: hexToRGB(COLORS.TINT, 0.6),
     shadowOffset: { width: 0, height: 0 },
   },
   view: {

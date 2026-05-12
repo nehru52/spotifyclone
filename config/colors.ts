@@ -1,14 +1,16 @@
 export const COLORS = {
-  WHITE: '#ffffff',
-  BLACK: '#000000',
-  GREY: '#777777',
-  PRIMARY: '#121212',
-  SECONDARY: '#282828',
-  LIGHT_GREY: '#b3b3b3',
-  LIGHTER_GREY: '#d5d5d5',
-  TINT: '#1ed760',
-  NAV: '#191414',
-  ALBUM_FALLBACK_GRADIENT: '#2e335a',
+  WHITE: '#FFFFFF',        // Pure white
+  BLACK: '#000000',        // Pure black for all primary text (High Contrast)
+  GREY: '#4A4A4A',         // Dark grey for secondary text
+  PRIMARY: '#F5E6D3',      // Medium Sandal - Distinct warm background
+  SECONDARY: '#E8F5E9',    // Light Green (Mint/Sage) - For cards and boxes
+  LIGHT_GREY: '#D1D1D1',   // Grey for disabled states
+  LIGHTER_GREY: '#EEEEEE', // Very light grey for borders
+  TINT: '#4CAF50',         // Green accent (changed from gold)
+  NAV: '#F5E6D3',          // Matching Sandal for navigation bars  ALBUM_FALLBACK_GRADIENT: '#C8E6C9', // Muted green for image placeholders
+  VATICAN_GOLD: '#4CAF50', // Green (changed from gold)
+  VATICAN_BLUE: '#4CAF50', // Green (changed from dark green)
+  VATICAN_YELLOW: '#4CAF50', // Green (changed from gold)
 };
 
 export const BROWSE_CATEGORIES_COLORS = [

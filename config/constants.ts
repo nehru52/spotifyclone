@@ -8,8 +8,9 @@ export enum PLATFORMS {
 
 export enum Pages {
   HOME = 'home',
-  SEARCH = 'search',
-  LIBRARY = 'library',
+  MAP = 'map',
+  BOOKING = 'booking',
+  PROFILE = 'profile',
 }
 
 export enum Sizes {
@@ -29,11 +30,10 @@ export enum Shapes {
 }
 
 export enum Categories {
-  SAVED_PLAYLISTS = 'playlist',
-  SAVED_PODCASTS = 'show',
-  SAVED_ALBUMS = 'album',
-  FOLLOWED_ARTISTS = 'artist',
+  SAVED_TOURS = 'tour',
+  AUDIO_STOPS = 'stop',
   DOWNLOADED = 'downloaded',
+  FAVORITES = 'favorites',
   ALL = 'all',
 }
 
@@ -58,8 +58,8 @@ export const explicit_SIGN = 'E';
 export const SOUND_COPYRIGHT_SIGN = '\u2117';
 export const COPYRIGHT_SIGN = '\u00A9';
 
-export const COMMON_HEADER_HEIGHT = 100;
-export const HEADER_HEIGHT = 135;
+export const COMMON_HEADER_HEIGHT = 60;
+export const HEADER_HEIGHT = 80;
 export const HEADER_CATEGORIES_HEIGHT = 50;
 export const BOTTOM_NAVIGATION_HEIGHT = 90;
 
@@ -68,3 +68,18 @@ export const TRACK_COVER_SIZE = 50;
 export const RECENTLY_PLAYED_COVER_SIZE = 55;
 export const BROWSE_CATEGORY_IMAGE_SIZE = 75;
 export const BROWSE_CATEGORY_HEIGHT = 55;
+
+export const LANGS: { code: any; flag: string; label: string }[] = [
+  { code: 'en', flag: '🇬🇧', label: 'EN' },
+  { code: 'it', flag: '🇮🇹', label: 'IT' },
+  { code: 'es', flag: '🇪🇸', label: 'ES' },
+  { code: 'fr', flag: '🇫🇷', label: 'FR' },
+  { code: 'de', flag: '🇩🇪', label: 'DE' },
+  { code: 'zh', flag: '🇨🇳', label: 'ZH' },
+  { code: 'ja', flag: '🇯🇵', label: 'JA' },
+  { code: 'pt', flag: '🇧🇷', label: 'PT' },
+  { code: 'pl', flag: '🇵🇱', label: 'PL' },
+  { code: 'ru', flag: '🇷🇺', label: 'RU' },
+  { code: 'ar', flag: '🇸🇦', label: 'AR' },
+  { code: 'ko', flag: '🇰🇷', label: 'KO' },
+];

@@ -10,8 +10,9 @@ export const styles = StyleSheet.create({
   text: {
     fontSize: 13,
     lineHeight: 13,
-    fontFamily: 'SF-Bold',
+    fontFamily: 'System',
     fontWeight: '500',
     color: COLORS.WHITE,
   },
 });
+

@@ -37,10 +37,11 @@ export const styles = StyleSheet.create({
     fontSize: 13,
     lineHeight: 13,
     textAlign: 'center',
-    fontFamily: 'SF-Regular',
+    fontFamily: 'System',
     marginTop: 5,
   },
   active: {
-    color: COLORS.WHITE,
+    color: COLORS.BLACK,
   },
 });
+

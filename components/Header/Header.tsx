@@ -30,11 +30,9 @@ export const Header = ({ tab }: HeaderPropsType) => {
 
   const height = React.useMemo(() => {
     switch (tab) {
-      case Pages.LIBRARY:
-        return HEADER_HEIGHT + HEADER_CATEGORIES_HEIGHT;
-      case Pages.SEARCH:
-        /* return search box height */
-        return HEADER_HEIGHT + 0;
+      case Pages.BOOKING:
+      case Pages.MAP:
+      case Pages.PROFILE:
       case Pages.HOME:
       default:
         return HEADER_HEIGHT;
@@ -43,10 +41,9 @@ export const Header = ({ tab }: HeaderPropsType) => {
 
   const TabRelatedComponent = React.useMemo(() => {
     switch (tab) {
-      case Pages.LIBRARY:
-        return <LibraryRelated />;
-      case Pages.SEARCH:
-        return <>{/* Render search box */}</>;
+      case Pages.BOOKING:
+      case Pages.MAP:
+      case Pages.PROFILE:
       case Pages.HOME:
       default:
         return null;
@@ -55,20 +52,20 @@ export const Header = ({ tab }: HeaderPropsType) => {
 
   const TabRelatedIcons = React.useMemo(() => {
     switch (tab) {
-      case Pages.LIBRARY:
+      case Pages.HOME:
         return (
           <>
             <Pressable>
-              <Icons.Ionicons style={styles.icon} name="search" />
+              <Icons.Ionicons style={styles.icon} name="notifications-outline" />
             </Pressable>
             <Pressable>
-              <Icons.AntDesign style={styles.icon} name="plus" />
+              <Icons.AntDesign style={styles.icon} name="setting" />
             </Pressable>
           </>
         );
-      case Pages.SEARCH:
-        return <>{/* Render search related icons */}</>;
-      case Pages.HOME:
+      case Pages.BOOKING:
+      case Pages.MAP:
+      case Pages.PROFILE:
       default:
         return null;
     }
@@ -83,7 +80,6 @@ export const Header = ({ tab }: HeaderPropsType) => {
             source={{ uri: userData.imageURL || '' }}
           />
         </Pressable>
-        {title && <Text style={styles.titleText}>{title}</Text>}
         {TabRelatedIcons}
       </View>
       {TabRelatedComponent}

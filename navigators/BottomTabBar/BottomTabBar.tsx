@@ -2,59 +2,47 @@ import * as React from 'react';
 import { Pressable, Text, View } from 'react-native';
 
 import { LinearGradient } from 'expo-linear-gradient';
-import AntDesign from '@expo/vector-icons/AntDesign';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-import { COLORS, Pages } from '@config';
-import { translations } from '@data';
+import { COLORS } from '@config';
+import { useLanguage } from '@context';
 import { hexToRGB } from '@utils';
 
 import { styles } from './styles';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { useApplicationDimensions } from '@hooks';
 
-const renderPressableContent = (name: string, isActive: boolean) => {
-  switch (name) {
-    case Pages.SEARCH:
-      return (
-        <View style={styles.linkContainer}>
-          <Ionicons
-            style={[styles.icon, isActive ? styles.active : {}]}
-            name="search"
-            size={22}
-          />
-          <Text style={[styles.text, isActive ? styles.active : {}]}>
-            {translations.router[Pages.SEARCH]}
-          </Text>
-        </View>
-      );
-    case Pages.LIBRARY:
-      return (
-        <View style={styles.linkContainer}>
-          <Ionicons
-            style={[styles.icon, isActive ? styles.active : {}]}
-            name="library"
-            size={22}
-          />
-          <Text style={[styles.text, isActive ? styles.active : {}]}>
-            {translations.router[Pages.LIBRARY]}
-          </Text>
-        </View>
-      );
-    default:
-      return (
-        <View style={styles.linkContainer}>
-          <AntDesign
-            style={[styles.icon, isActive ? styles.active : {}]}
-            name="home"
-            size={22}
-          />
-          <Text style={[styles.text, isActive ? styles.active : {}]}>
-            {translations.router[Pages.HOME]}
-          </Text>
-        </View>
-      );
+const renderPressableContent = (name: string, isActive: boolean, translations: any) => {
+  let icon = 'headset-outline';
+  let label = translations.router.home;
+
+  // Use includes() to match routes like "map/index", "map", etc.
+  if (name.includes('map')) {
+    icon = 'map-outline';
+    label = translations.router.map;
+  } else if (name.includes('booking')) {
+    icon = 'ticket-outline';
+    label = translations.router.booking;
+  } else if (name.includes('profile')) {
+    icon = 'person-outline';
+    label = translations.router.profile;
+  } else if (name.includes('home')) {
+    icon = 'home-outline';
+    label = translations.router.home;
   }
+
+  return (
+    <View style={styles.linkContainer}>
+      <Ionicons
+        style={[styles.icon, isActive ? styles.active : {}]}
+        name={icon as any}
+        size={22}
+      />
+      <Text style={[styles.text, isActive ? styles.active : {}]}>
+        {label}
+      </Text>
+    </View>
+  );
 };
 
 export const BottomTabBar = ({
@@ -63,6 +51,8 @@ export const BottomTabBar = ({
   navigation,
 }: BottomTabBarProps) => {
   const { width } = useApplicationDimensions();
+  const { translations } = useLanguage();
+  
   return (
     <View style={styles.container}>
       <LinearGradient
@@ -92,9 +82,9 @@ export const BottomTabBar = ({
             accessibilityState={isActive ? { selected: true } : {}}
             accessibilityLabel={options.tabBarAccessibilityLabel}
             onPress={onPress}
-            style={[styles.pressable, { width: width / 3 }]}
+            style={[styles.pressable, { width: width / 4 }]}
           >
-            {renderPressableContent(route.name, isActive)}
+            {renderPressableContent(route.name, isActive, translations)}
           </Pressable>
         );
       })}

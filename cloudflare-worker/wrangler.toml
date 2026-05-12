@@ -1,0 +1,24 @@
+# Cloudflare Worker Configuration
+# This file configures your audio streaming worker
+
+name = "wondersofrome-audio-worker"
+main = "audio-worker.js"
+compatibility_date = "2024-01-01"
+
+# R2 Bucket Binding
+[[r2_buckets]]
+binding = "AUDIO_BUCKET"
+bucket_name = "wondersofrome-audio"
+
+# Routes - Update with your domain
+# Option 1: Use workers.dev subdomain (for testing)
+# workers_dev = true
+
+# Option 2: Use custom domain (recommended for production)
+# routes = [
+#   { pattern = "audio.wondersofrome.com/*", zone_name = "wondersofrome.com" }
+# ]
+
+# Environment variables (optional)
+[vars]
+ENVIRONMENT = "production"

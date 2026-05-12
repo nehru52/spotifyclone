@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
   headerTitleText: {
     fontSize: 24,
     lineHeight: 24,
-    fontFamily: 'SF-Bold',
+    fontFamily: 'System',
     fontWeight: '600',
     color: COLORS.WHITE,
     letterSpacing: -1.2,
@@ -23,7 +23,7 @@ export const styles = StyleSheet.create({
   headerPressableText: {
     fontSize: 13,
     lineHeight: 13,
-    fontFamily: 'SF-Bold',
+    fontFamily: 'System',
     fontWeight: '800',
     color: COLORS.LIGHT_GREY,
   },
@@ -38,3 +38,4 @@ export const styles = StyleSheet.create({
     padding: 8,
   },
 });
+

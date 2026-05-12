@@ -5,6 +5,7 @@ import { Entypo } from '@expo/vector-icons';
 import { AnimatedPressable } from './AnimatedPressable';
 
 import { checkSavedAlbums, checkSavedPlaylists } from '@api';
+import { COLORS } from '@config';
 
 import { styles } from './styles';
 
@@ -15,6 +16,9 @@ export type SummaryPropsType = {
   subtitle: string;
   info: string;
   forceDisableSaveIcon?: boolean;
+  description?: string;
+  kidsMyth?: string;
+  tips?: string[];
 };
 
 export const Summary = ({
@@ -24,6 +28,9 @@ export const Summary = ({
   subtitle,
   info,
   forceDisableSaveIcon,
+  description,
+  kidsMyth,
+  tips,
 }: SummaryPropsType) => {
   const [isSaved, setIsSaved] = React.useState<boolean>(false);
 
@@ -52,6 +59,28 @@ export const Summary = ({
       <Text style={styles.title}>{title}</Text>
       <Text style={styles.subtitle}>{subtitle}</Text>
       <Text style={styles.info}>{info}</Text>
+
+      {description && (
+        <View style={{ marginTop: 16 }}>
+          <Text style={[styles.info, { color: COLORS.WHITE, fontSize: 14, lineHeight: 20 }]}>{description}</Text>
+        </View>
+      )}
+
+      {kidsMyth && (
+        <View style={{ marginTop: 16, backgroundColor: 'rgba(255,255,255,0.05)', padding: 12, borderRadius: 8 }}>
+          <Text style={[styles.subtitle, { color: COLORS.TINT, marginBottom: 4 }]}>✨ Kids Myth</Text>
+          <Text style={[styles.info, { fontSize: 13, fontStyle: 'italic' }]}>{kidsMyth}</Text>
+        </View>
+      )}
+
+      {tips && tips.length > 0 && (
+        <View style={{ marginTop: 16 }}>
+          <Text style={[styles.subtitle, { fontSize: 14, fontWeight: 'bold' }]}>💡 Pro Tips</Text>
+          {tips.map((tip, index) => (
+            <Text key={index} style={[styles.info, { fontSize: 13, marginTop: 4 }]}>• {tip}</Text>
+          ))}
+        </View>
+      )}
 
       <View style={styles.pressablesView}>
         {!forceDisableSaveIcon && (
